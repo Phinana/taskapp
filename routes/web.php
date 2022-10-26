@@ -22,7 +22,7 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
         Route::get('/', function () {
-            return view('welcome');
+            return redirect()->route('home_index');
         });
         
         Route::get('/home', [TaskController::class, 'index'])->name('home_index');
